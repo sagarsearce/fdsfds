@@ -1,0 +1,70 @@
+<div class="main__container">
+  <div class="card__container">
+    <div class="card-body">
+      <form [formGroup]="admin" (ngSubmit)="login()">
+        <div class="form_control">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="email"
+            formControlName="email"
+          />
+          <div
+            class="text_danger"
+            *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+          >
+            {{ email?.errors?.['err'] }}
+          </div>
+        </div>
+
+        <div class="form_control">
+          <label for="password">Password</label>
+          <input
+            class="form-control"
+            placeholder="password"
+            type="password"
+            formControlName="password"
+          />
+          <div
+            class="text_danger"
+            *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+          >
+            {{ password?.errors?.['err'] }}
+          </div>
+        </div>
+
+        <div class="terms">
+          <input
+            class="form-control"
+            placeholder="password"
+            type="checkbox"
+            (change)="checkBoxChange()"
+          />
+          <span> * accept terms and conditions</span>
+        </div>
+
+        <div class="button__container">
+          <button type="submit" [disabled]="!admin.valid || !isTermsAccepted">
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="backshadow" *ngIf="isOpen && !isTermsAccepted">
+        <div class="popup">
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+              repellendus. Ratione odit neque rerum nemo magnam rem hic eos?
+              Voluptates optio quasi dolorem esse ab magnam ratione nemo, magni
+              vitae.
+            </p>
+            <div class="button__container">
+              <button type="button" (click)="acceptCondition()">accept</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

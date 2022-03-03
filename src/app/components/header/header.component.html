@@ -1,0 +1,9 @@
+<nav class="navbar__container">
+  <div class="left">
+    <h1>Samcom Technobrains</h1>
+  </div>
+  <div *ngIf="this.user" class="right">
+    <p>{{ this.user }}</p>
+    <button (click)="logOut()">Logout</button>
+  </div>
+</nav>

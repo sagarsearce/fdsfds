@@ -1,0 +1,102 @@
+.main__container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 800px;
+  .card__container {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 20px;
+    min-width: 500px;
+
+    .backshadow {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(188, 188, 221, 0.7);
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+
+      .popup {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        background-color: white;
+        padding: 20px;
+        max-width: 500px;
+        z-index: 2;
+      }
+    }
+
+    .form_control {
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid darkgray;
+        width: 100%;
+      }
+      margin-bottom: 40px;
+      .text_danger {
+        color: rgb(231, 19, 19);
+        margin-top: 4px;
+        font-size: small;
+      }
+    }
+    .terms {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      input {
+        margin-right: 10px;
+      }
+    }
+    .button__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      button {
+        padding: 10px;
+        background-color: #5353a8;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        margin-top: 20px;
+        min-width: 100px;
+      }
+      button[disabled] {
+        background-color: #a9a9e4;
+      }
+    }
+  }
+}
+
+input.ng-dirty.ng-invalid {
+  border: 2px red solid;
+}
+
+input.ng-dirty.ng-valid {
+  border: 2px green solid;
+}
+
+input.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+input.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+input.ng-dirty.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+input.ng-dirty.ng-touched.ng-valid {
+  border: 2px green solid;
+}
